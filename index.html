@@ -11,6 +11,8 @@
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/b9f76651cd.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <title>Weather</title>
 </head>
 
@@ -18,12 +20,15 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <form>
-                    <input type="search" placeholder="Enter City here" />
+                <form id="search-form">
+                    <input type="search" id="search-bar" placeholder="Enter City here" />
                     <input type="submit" value="search" />
+                    <button id="current"> Current </button>
                 </form>
-                <h1>Vienna - Currently 6°C</h1>
-                <h2>Sunday, 14th March 08:30</h2>
+                <h1><span id="city">Vienna</span> - Currently <span id="current-temperature">17</span>°C
+                    <!-- <a href="#" id="Celcius">°C</a> | <a href="#" id="Fahrenheit">°F</a> -->
+                </h1>
+                <h2 id="time">Sunday, 14th March 08:30 - night time</h2>
                 <h3> 5 Day Forcast </h3>
             </div>
             <div class="col">
@@ -88,6 +93,7 @@
             </div>
         </div>
     </div>
+    <script src="src/index.js"></script>
 </body>
 
 </html>

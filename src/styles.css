@@ -37,6 +37,7 @@ h3 {
   margin: 20px 0px;
 }
 
+#current,
 input {
   background: rgb(252, 252, 252);
   opacity: 0.7;
