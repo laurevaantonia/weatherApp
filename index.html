@@ -17,36 +17,49 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <form id="search-form">
-                    <input type="search" id="search-bar" placeholder="Enter City here" />
-                    <input type="submit" value="search" />
-                    <button id="current"> Current </button>
-                </form>
-                <h1><span id="city">Vienna</span> - Currently <span id="current-temperature">17</span>°C
-                    <!-- <a href="#" id="Celcius">°C</a> | <a href="#" id="Fahrenheit">°F</a> -->
-                </h1>
+    <div class="container" id="weather-app">
+        <div class="row form">
+            <form id="search-form">
+                <input type="search" id="search-bar" placeholder="Enter City here" />
+                <input type="submit" value="search" />
+                <button id="current"> Current </button>
+            </form>
+        </div>
+        <div class="row general"> 
+            <div class="clearfix">
+<p class="weatherimage">
+    <i class="fas fa-cloud-moon"> </i>
+</p>
+<h1> <span id="city">
+        Vienna
+    </span>
+    - Currently
+    <span id="current-temperature">
+        17
+    </span>°C
+    <span class="units">
+<a href="#" id="Celcius">°C</a> | <a href="#" id="Fahrenheit">°F</a>
+    </span>
+    
+</h1>
+            </div>
+                <p class="description" id="description">
+                    Good Night! 
+                </p>
                 <h2 id="time">Sunday, 14th March 08:30 - night time</h2>
-                <h3> 5 Day Forcast </h3>
-            </div>
-            <div class="col">
-                <p class="background-image">
-                    <i class="fas fa-cloud-moon"> </i>
-                </p>
-                <p class="quote">
-                    Good Night!
-                </p>
-            </div>
+                <ul class="details">
+                    <li> Humidity: <span id="humidity"> </span>% </li>
+                    <li> Windspeed:  <span id="windspeed"> </span> km/h</li>
+                </ul>
         </div>
         <div class="row forcast">
+            <h3> 5 Day Forcast </h3>
             <div class="col">
                 <div class="weather-icon">
                     <i class="fas fa-sun"></i>
                 </div>
                 <p class="day">Monday</p>
-                <p class="emperature-forcast">
+                <p class="temperature-forcast">
                     9°C /
                     <span class="lowest-temperature"> 2°C </span>
                 </p>

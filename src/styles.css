@@ -1,81 +1,94 @@
-body {
   display: block;
-  padding: 15px;
-  background: linear-gradient(to top, #30cfd0 0%, #330867 100%);
-  border: 2px solid white;
-  font-family: "Quicksand", sans-serif;
-  background-repeat: no-repeat;
-  border-radius: 5px;
-  margin: 20 auto;
-}
-
+/** @format */
 h1,
 h2,
 h3 {
-  padding: 15px 0px;
-  margin: 20px 0px;
+	text-align: left;
 }
 
 h1 {
-  color: #fff;
+	font-size: 34px;
+	display: inline;
 }
 h2 {
-  color: #dbe2ef;
-  text-decoration: underline;
-  font-size: 18px;
+	font-size: 20px;
+	text-decoration: underline;
+}
+h3 {
+	font-weight: bold;
+}
+.units {
+	font-size: 20px;
+	position: relative;
+	top: -10px;
+}
+.row.general {
+	margin: 20px 0px;
 }
 
-h3 {
-  font-weight: bold;
+.details li {
+	list-style: none;
+	display: inline;
+	padding: 10px;
+	text-align: center;
 }
 
 .row.forcast {
-  text-align: center;
-  padding: 5px;
-  background: none;
-  padding: 15px 0px;
-  margin: 20px 0px;
+	text-align: center;
+	background: none;
+	margin: 20px 0px;
 }
 
 #current,
 input {
-  background: rgb(252, 252, 252);
-  opacity: 0.7;
-  border-radius: 5px;
-  color: black;
+	background: rgb(252, 252, 252);
+	opacity: 0.7;
+	border-radius: 5px;
+	color: black;
 }
 
-.background-image {
-  position: fixed;
-  text-align: center;
-  right: 15px;
-  top: 5px;
-  font-size: 120px;
-  color: white;
-  opacity: 0.6;
+.weatherimage {
+	text-align: center;
+	font-size: 80px;
+	opacity: 0.6;
+	display: inline;
 }
 
-.quote {
-  position: fixed;
-  text-align: center;
-  right: 80px;
-  top: 10px;
-  font-size: 32px;
-  color: white;
-  opacity: 0.6;
+.description {
+	text-align: center;
+	font-size: 32px;
+	opacity: 0.6;
+	text-transform: capitalize;
 }
 
 .day {
-  font-weight: bold;
-  color: #222831;
+	font-weight: bold;
 }
 
 .lowest-temperature {
-  font-weight: small;
-  color: #393e46;
+	font-weight: small;
 }
 
 .weather-icon {
-  font-size: 48px;
-  color: #322073;
+	font-size: 48px;
+	color: rgb(214, 228, 240);
+	display: block;
+}
+#weather-app {
+	background: radial-gradient(
+		circle at -10.9% 97.2%,
+		rgb(214, 228, 240) 0%,
+		rgb(214, 228, 240) 10%,
+		rgb(30, 86, 160) 14%,
+		rgb(30, 86, 160) 20%,
+		rgb(22, 49, 114) 27.5%,
+		rgb(22, 49, 114) 66%
+	);
+	border: 2px solid white;
+	font-family: "Quicksand", sans-serif;
+	border-radius: 10px;
+	margin: 20px auto;
+	padding: 20px;
+	max-width: 600px;
+	color: #fff;
 }

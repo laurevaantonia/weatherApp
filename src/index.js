@@ -33,11 +33,17 @@
     axios.get(url).then(showTemperature)
   }
 function showTemperature(response){
-  let temp= Math.round(response.data.main.temp)
   let currentTemp = document.querySelector("#current-temperature")
-  currentTemp.innerHTML = temp
-   let result = document.querySelector("#city");
-  result.innerHTML = response.data.name
+  currentTemp.innerHTML =Math.round(response.data.main.temp)
+  let cityname = document.querySelector("#city");
+  cityname.innerHTML = response.data.name
+  let humidity = document.querySelector("#humidity")
+  humidity.innerHTML = response.data.main.humidity
+  let windspeed = document.querySelector("#windspeed")
+  windspeed.innerHTML = Math.round(response.data.wind.speed)
+  let description = document.querySelector("#description")
+  description.innerHTML = response.data.weather[0].description
+  console.log(response)
 }
 
   function handleForm (event) {
