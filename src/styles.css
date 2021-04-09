@@ -6,7 +6,7 @@ h3 {
 }
 
 h1 {
-	font-size: 34px;
+	font-size: 28px;
 	display: inline;
 }
 h2 {
@@ -28,8 +28,7 @@ h3 {
 .details li {
 	list-style: none;
 	display: inline;
-	padding: 10px;
-	text-align: center;
+	padding: 10px 10px 10px 0px;
 }
 
 .row.forcast {
@@ -54,7 +53,6 @@ input {
 }
 
 .description {
-	text-align: center;
 	font-size: 32px;
 	opacity: 0.6;
 	text-transform: capitalize;
@@ -76,13 +74,10 @@ input {
 #weather-app {
 	background: radial-gradient(
 		circle at -10.9% 97.2%,
-		rgb(214, 228, 240) 0%,
-		rgb(214, 228, 240) 10%,
-		rgb(30, 86, 160) 14%,
-		rgb(30, 86, 160) 20%,
-		rgb(22, 49, 114) 27.5%,
-		rgb(22, 49, 114) 66%
+		#2575fc 22%,
+		#6a11cb 100%
 	);
+
 	border: 2px solid white;
 	font-family: "Quicksand", sans-serif;
 	border-radius: 10px;
@@ -90,4 +85,8 @@ input {
 	padding: 20px;
 	max-width: 600px;
 	color: #fff;
+}
+footer {
+	margin: 20px auto;
+	max-width: 600px;
 }

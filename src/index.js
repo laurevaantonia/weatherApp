@@ -43,15 +43,21 @@ function showTemperature(response){
   let currentTemp = document.querySelector("#current-temperature")
   currentTemp.innerHTML =Math.round(response.data.main.temp)
   let cityname = document.querySelector("#city");
-  cityname.innerHTML = response.data.name
-  let humidity = document.querySelector("#humidity")
-  humidity.innerHTML = response.data.main.humidity
-  let windspeed = document.querySelector("#windspeed")
-  windspeed.innerHTML = Math.round(response.data.wind.speed)
-  let description = document.querySelector("#description")
-  description.innerHTML = response.data.weather[0].description
-  let time = document.querySelector("#time")
-  time.innerHTML = formatDate(response.data.dt *1000)
+  cityname.innerHTML = response.data.name;
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = response.data.main.humidity;
+  let windspeed = document.querySelector("#windspeed");
+  windspeed.innerHTML = Math.round(response.data.wind.speed);
+  let description = document.querySelector("#description");
+  description.innerHTML = response.data.weather[0].description;
+  let time = document.querySelector("#time");
+  time.innerHTML = formatDate(response.data.dt *1000);
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+  `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+ iconElement.setAttribute("alt", response.data.weather[0].description)
 }
 
   function handleForm (event) {
