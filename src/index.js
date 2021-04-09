@@ -1,5 +1,6 @@
   //get Time
-  let now = new Date ()
+  function formatDate (timestamp){
+    let now = new Date (timestamp)
   let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday"]
   let months = [
     "January",
@@ -18,12 +19,18 @@
   let weekday = days[now.getDay()];
   let month = months[now.getMonth()];
   let hour = now.getHours();
+   if (hour < 10 ){
+    let hour = `0${hour}`
+  }
   let minute = now.getMinutes();
+  if (minute < 10 ){
+    let minute = `0${minute}`
+  }
   let year =now.getFullYear();
   let time = document.querySelector("#time")
   let day = now.getDate()
-  time.innerHTML = `${weekday}, ${month} ${day} ${year} - ${hour}:${minute}`
-
+  return  `${weekday}, ${month} ${day} ${year} - ${hour}:${minute}`
+}
   // get search engine
 
   function search (city) {
@@ -43,7 +50,8 @@ function showTemperature(response){
   windspeed.innerHTML = Math.round(response.data.wind.speed)
   let description = document.querySelector("#description")
   description.innerHTML = response.data.weather[0].description
-  console.log(response)
+  let time = document.querySelector("#time")
+  time.innerHTML = formatDate(response.data.dt *1000)
 }
 
   function handleForm (event) {
