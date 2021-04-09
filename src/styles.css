@@ -90,3 +90,9 @@ footer {
 	margin: 20px auto;
 	max-width: 600px;
 }
+
+.units .active {
+	color: white;
+	text-decoration: none;
+	cursor: default;
+}

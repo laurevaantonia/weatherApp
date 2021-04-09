@@ -1,7 +1,15 @@
   //get Time
-  function formatDate (timestamp){
-    let now = new Date (timestamp)
-  let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday"]
+  function formatDate (timestamp) {
+    let now = new Date (timestamp);
+    let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
   let months = [
     "January",
     "February",
@@ -15,21 +23,21 @@
     "October",
     "November",
     "December"
-  ]
+  ];
   let weekday = days[now.getDay()];
   let month = months[now.getMonth()];
-  let hour = now.getHours();
-   if (hour < 10 ){
-    let hour = `0${hour}`
-  }
+  let hours = now.getHours();
   let minute = now.getMinutes();
   if (minute < 10 ){
-    let minute = `0${minute}`
+    minute = `0${minute}`
+  }
+  if (hours < 10) {
+    hours = `0${hours}`
   }
   let year =now.getFullYear();
   let time = document.querySelector("#time")
   let day = now.getDate()
-  return  `${weekday}, ${month} ${day} ${year} - ${hour}:${minute}`
+  return  `${weekday}, ${month} ${day} ${year} - ${hours}:${minute}`
 }
   // get search engine
 
@@ -41,7 +49,8 @@
   }
 function showTemperature(response){
   let currentTemp = document.querySelector("#current-temperature")
-  currentTemp.innerHTML =Math.round(response.data.main.temp)
+  celciusTemperature = Math.round(response.data.main.temp);
+  currentTemp.innerHTML =celciusTemperature;
   let cityname = document.querySelector("#city");
   cityname.innerHTML = response.data.name;
   let humidity = document.querySelector("#humidity");
@@ -69,7 +78,34 @@ function showTemperature(response){
   let searchform = document.querySelector("#search-form")
   searchform.addEventListener("submit",handleForm)
 
-  search("Vienna")
+ 
+ 
+///   changing the Metric
+function displayFahrenheit (event) {
+     event.preventDefault();
+    let temp = document.querySelector("#current-temperature");
+    let Fahrenheit = (celciusTemperature * 9) / 5 + 32;
+    temp.innerHTML = Math.round(Fahrenheit);
+    celciusLink.classList.remove("active");
+    fahrenheitLink.classList.add("active");
+  }
+let fahrenheitLink = document.querySelector("#Fahrenheit")
+fahrenheitLink.addEventListener("click",displayFahrenheit)
+
+function displayCelcius (event) {
+     event.preventDefault();
+    let temp = document.querySelector("#current-temperature");
+    temp.innerHTML =celciusTemperature;
+    celciusLink.classList.add("active");
+    fahrenheitLink.classList.remove("active");
+  }
+let celciusLink = document.querySelector("#Celcius")
+celciusLink.addEventListener("click", displayCelcius)
+
+let celciusTemperature = null
+
+ search("Vienna")
+
 
   // getting the current Button 
 
@@ -89,20 +125,3 @@ function showTemperature(response){
 
 let currentButton = document.querySelector("#current")
 currentButton.addEventListener("click", currentPosisiton)
- 
-  /*/ Changing the Metric
-  function showCelcius (event) {
-     event.preventDefault();
-    let temp = document.querySelector("#current-temperature");
-    temp.innerHTML = 17;
-  }
-let Celcius = document.querySelector("#Celcius")
-Celcius.addEventListener("click", showCelcius)
-
-function showFahrenheit (event) {
-     event.preventDefault();
-    let temp = document.querySelector("#current-temperature");
-    temp.innerHTML = 66;
-  }
-let Fahrenheit = document.querySelector("#Fahrenheit")
-Fahrenheit.addEventListener("click",showFahrenheit)*/
