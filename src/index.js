@@ -139,28 +139,6 @@ function handleForm(event) {
 let searchform = document.querySelector("#search-form");
 searchform.addEventListener("submit", handleForm);
 
-///   changing the Metric
-function displayFahrenheit(event) {
-	event.preventDefault();
-	let temp = document.querySelector("#current-temperature");
-	let Fahrenheit = (celciusTemperature * 9) / 5 + 32;
-	temp.innerHTML = Math.round(Fahrenheit);
-	celciusLink.classList.remove("active");
-	fahrenheitLink.classList.add("active");
-}
-let fahrenheitLink = document.querySelector("#Fahrenheit");
-fahrenheitLink.addEventListener("click", displayFahrenheit);
-
-function displayCelcius(event) {
-	event.preventDefault();
-	let temp = document.querySelector("#current-temperature");
-	temp.innerHTML = celciusTemperature;
-	celciusLink.classList.add("active");
-	fahrenheitLink.classList.remove("active");
-}
-let celciusLink = document.querySelector("#Celcius");
-celciusLink.addEventListener("click", displayCelcius);
-
 let celciusTemperature = null;
 
 search("Vienna");
