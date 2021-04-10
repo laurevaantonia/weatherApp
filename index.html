@@ -1,115 +1,69 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="src/styles.css" />
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
-    <link rel="stylesheet" href="src/styles.css" />
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<title>Weather</title>
+	</head>
 
-    <title>Weather</title>
-</head>
-
-<body>
-    <div class="container" id="weather-app">
-        <div class="row form">
-            <form id="search-form">
-                <input type="search" id="search-bar" placeholder="Enter City here" autocomplete="off"/>
-                <input type="submit" value="search" />
-                <button id="current"> Current </button>
-            </form>
-        </div>
-        <div class="row general"> 
-            <div class="clearfix">
-<img
-scr=#
-alt="Image"
-id= "icon"
-class=weather-image
-/>
-<h1> <span id="city">
-        Vienna
-    </span>
-    - Currently
-    <span id="current-temperature">
-        17
-    </span>°C
-    <span class="units">
-<a href="#" id="Celcius" class= "active">°C</a> | <a href="#" id="Fahrenheit">°F</a>
-    </span>
-    
-</h1>
+	<body>
+		<div class="container" id="weather-app">
+			<div class="row form">
+				<form id="search-form">
+					<input
+						type="search"
+						id="search-bar"
+						placeholder="Enter City here"
+						autocomplete="off"
+					/>
+					<input type="submit" value="search" />
+					<button id="current">Current</button>
+				</form>
+			</div>
+			<div class="row general">
+				<div class="clearfix">
+					<img scr="#" alt="Image" id="icon" class="weather-image" />
+					<h1>
+						<span id="city"> Vienna </span>
+						- Currently
+						<span id="current-temperature"> 17 </span>°C
+						<span class="units">
+							<a href="#" id="Celcius" class="active">°C</a> |
+							<a href="#" id="Fahrenheit">°F</a>
+						</span>
+					</h1>
+				</div>
+				<p class="description" id="description">Good Night!</p>
+				<h2>Last updated: <span id="time"></span></h2>
+				<ul class="details">
+					<li>Humidity: <span id="humidity"> </span>%</li>
+					<li>Windspeed: <span id="windspeed"> </span> km/h</li>
+				</ul>
+                <h3>5 Day Forecast</h3>
+			<div class="row forecast" id="forecast">
             </div>
-                <p class="description" id="description">
-                    Good Night! 
-                </p>
-                <h2> Last updated: <span id="time"></span>
-                </h2>
-                <ul class="details">
-                    <li> Humidity: <span id="humidity"> </span>% </li>
-                    <li> Windspeed:  <span id="windspeed"> </span> km/h</li>
-                </ul>
-        </div>
-        <div class="row forcast">
-            <h3> 5 Day Forcast </h3>
-            <div class="col">
-                <div class="weather-icon">
-                    <i class="fas fa-sun"></i>
-                </div>
-                <p class="day">Monday</p>
-                <p class="temperature-forcast">
-                    9°C /
-                    <span class="lowest-temperature"> 2°C </span>
-                </p>
-            </div>
-            <div class="col">
-                <div class="weather-icon">
-                    <i class="fas fa-cloud-showers-heavy"></i>
-                </div>
-                <p class="day">Tuesday</p>
-                <p class="temperature-forcast">
-                    9°C /
-                    <span class="lowest-temperature"> 2°C </span>
-                </p>
-            </div>
-            <div class="col">
-                <div class="weather-icon">
-                    <i class="far fa-snowflake"></i>
-                </div>
-                <p class="day">Wednesday</p>
-                <p class="temperature-forcast">
-                    9°C /
-                    <span class="lowest-temperature"> 2°C </span>
-                </p>
-            </div>
-            <div class="col">
-                <div class="weather-icon">
-                    <i class="fas fa-cloud-sun"></i>
-                </div>
-                <p class="day">Thursday</p>
-                <p class="temperature-forcast">
-                    9°C /
-                    <span class="lowest-temperature"> 2°C </span>
-                </p>
-            </div>
-            <div class="col">
-                <div class="weather-icon">
-                    <i class="fas fa-cloud-sun"></i>
-                </div>
-                <p class="day">Friday</p>
-                <p class="temperature-forcast">
-                    9°C /
-                    <span class="lowest-temperature"> 2°C </span>
-                </p>
-            </div>
-        </div>
-    </div>
-    <script src="src/index.js"></script>
-</body>
-<footer> <a href="https://github.com/laurevaantonia/weatherApp" target="_blank">Open Sourced</a> by Laura</footer>
+		</div>
+		<script src="src/index.js"></script>
+	</body>
+	<footer>
+		<a href="https://github.com/laurevaantonia/weatherApp" target="_blank"></a>
+		Open Sourced by Laura
+	</footer>
 </html>
