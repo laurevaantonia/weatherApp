@@ -33,28 +33,38 @@
 						placeholder="Enter City here"
 						autocomplete="off"
 					/>
-					<input type="submit" value="search" />
-					<button id="current">Current</button>
+					<input type="submit" value="🔎" id="submit" />
+					<button id="current">📍</button>
 				</form>
 			</div>
 			<div class="row general">
-				<div class="clearfix">
-					<img scr="#" alt="Image" id="icon" class="weather-image" />
+				<div class="col-8">
 					<h1>
-						<span id="city"> Vienna </span> Currently
+						<span id="city"> Vienna </span> - Currently
 						<span id="current-temperature"> 17 </span>
 						<span class="unit">°C</span>
 					</h1>
+					<ul class="details">
+						<li>Last updated: <span id="time"></span></li>
+						<li>Humidity: <span id="humidity"> </span>%</li>
+						<li>Windspeed: <span id="windspeed"> </span> km/h</li>
+					</ul>
 				</div>
-				<p class="description" id="description">Good Night!</p>
-				<h2>Last updated: <span id="time"></span></h2>
-				<ul class="details">
-					<li>Humidity: <span id="humidity"> </span>%</li>
-					<li>Windspeed: <span id="windspeed"> </span> km/h</li>
-				</ul>
-				<h3>5 Day Forecast</h3>
-				<div class="row forecast" id="forecast"></div>
+				<div class="col-4">
+					<div>
+						<img
+							scr="#"
+							alt="Image"
+							id="icon"
+							class="weather-image"
+							width="150px"
+						/>
+					</div>
+					<p class="description" id="description"></p>
+				</div>
 			</div>
+			<h3>5 Day Forecast</h3>
+			<div class="row forecast" id="forecast"></div>
 		</div>
 		<script src="src/index.js"></script>
 	</body>

@@ -7,7 +7,8 @@ h3 {
 
 h1 {
 	font-size: 28px;
-	display: inline;
+	position: relative;
+	top: 8px;
 }
 h2 {
 	font-size: 12px;
@@ -20,14 +21,10 @@ h3 {
 	position: relative;
 	top: -10px;
 }
-.row.general {
-	margin: 20px 0px;
-}
-
-.details li {
+ul {
 	list-style: none;
-	display: inline;
-	padding: 10px 10px 10px 0px;
+	text-align: left;
+	padding: 0;
 }
 
 .row.forecast {
@@ -36,25 +33,35 @@ h3 {
 	margin: 20px 0px;
 }
 
-#current,
-input {
-	background: rgb(252, 252, 252);
-	opacity: 0.7;
-	border-radius: 5px;
-	color: black;
+.row.general {
+	margin: 20px 0px;
 }
 
-.weatherimage {
-	text-align: center;
-	font-size: 80px;
-	opacity: 0.6;
+#weather-image {
+	vertical-align: right;
 	display: inline;
 }
 
+input,
+#current {
+	background: rgb(252, 252, 252, 0.5);
+	border-radius: 4px;
+	color: black;
+	border: solid 1px #6716cc;
+	font-size: 20px;
+}
+#current,
+#submit {
+	border-radius: 40px;
+	border: none;
+}
+
 .description {
-	font-size: 32px;
-	opacity: 0.6;
+	font-size: 28px;
 	text-transform: capitalize;
+	font-style: italic;
+	text-align: left;
+	display: inline;
 }
 
 .weather-forcast-date {
@@ -73,7 +80,7 @@ input {
 	border: 2px solid white;
 	font-family: "Quicksand", sans-serif;
 	border-radius: 10px;
-	margin: 20px auto;
+	margin: 10px auto;
 	padding: 20px;
 	max-width: 600px;
 	color: #fff;
@@ -82,4 +89,16 @@ footer {
 	margin: -18px 20px;
 	max-width: 600px;
 	padding: 0px 20px;
+}
+
+.col-8 {
+	padding: 60px 0px;
+	vertical-align: center;
+}
+footer {
+	margin: 0 auto;
+	max-width: 600px;
+	padding: 0px 20px;
+	display: block;
+	text-align: center;
 }
