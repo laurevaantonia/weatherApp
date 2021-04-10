@@ -102,3 +102,9 @@ footer {
 	display: block;
 	text-align: center;
 }
+
+.col.forcast-days {
+	margin: 5px;
+	border-radius: 4px;
+	background-color: rgb(252, 252, 252, 0.1);
+}
