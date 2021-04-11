@@ -99,6 +99,28 @@ function getForecast(coords) {
 	axios.get(apiUrl).then(displayForecast);
 }
 
+function displayPollen(response) {
+	let grass = document.querySelector("#grass");
+	grass.innerHTML = response.data.data[0].Risk.grass_pollen;
+	let tree = document.querySelector("#tree");
+	tree.innerHTML = response.data.data[0].Risk.tree_pollen;
+	let weed = document.querySelector("#weed");
+	weed.innerHTML = response.data.data[0].Risk.weed_pollen;
+}
+
+function getPollen(coords) {
+	const options = {
+		method: "GET",
+		url: "https://api.ambeedata.com/latest/pollen/by-lat-lng",
+		params: { lat: coords.lat, lng: coords.lon },
+		headers: {
+			"x-api-key": "n2wGin6Yrd4x3PcyCMxB25GIUdAoUSy6CesEeIPi",
+			"Content-type": "application/json",
+		},
+	};
+	axios.request(options).then(displayPollen);
+}
+
 // get search engine
 
 function search(city) {
@@ -128,6 +150,7 @@ function showTemperature(response) {
 	);
 	iconElement.setAttribute("alt", response.data.weather[0].description);
 	getForecast(response.data.coord);
+	getPollen(response.data.coord);
 }
 
 function handleForm(event) {
